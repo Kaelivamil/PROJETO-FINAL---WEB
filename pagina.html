@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de conteúdo — Floricultura Samara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="delivery-area" style="min-height:70vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+        <div class="delivery-content">
+            <h1 id="titulo-pagina">Conteúdo em breve</h1>
+            <p id="texto-pagina">Esta página ainda não possui conteúdo correspondente neste protótipo.</p>
+            <a href="index.html" style="display:inline-block; margin-top:20px;">Voltar para a página inicial</a>
+        </div>
+    </main>
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const conteudo = parametros.get("conteudo");
+        if (conteudo) {
+            document.getElementById("titulo-pagina").textContent = conteudo;
+            document.getElementById("texto-pagina").textContent = "Confira em breve novidades sobre " + conteudo + ".";
+            document.title = conteudo + " — Floricultura Samara";
+        }
+    </script>
+</body>
+</html>
